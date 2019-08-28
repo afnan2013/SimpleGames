@@ -23,3 +23,32 @@ else:
     player_two = 'X'
 print("Player 2 is playing "+player_two)
 
+loop = 0
+while 1:
+    for i in range(3):
+        for j in range(3):
+            print(gridMatrix[i][j], end=" ")
+        print("")
+    if loop % 2 == 0:
+        print("***Player 1 Turn***")
+        p = int(input("Please select the position for insertion : "))
+        row_index = positions[p][0]
+        col_index = positions[p][1]
+        # print(row_index, col_index, gridMatrix[row_index][col_index])
+        for i in range(3):
+            for j in range(3):
+                if i == row_index and j == col_index:
+                    gridMatrix[i][j] = player_one
+                    break
+    else:
+        print("***Player 2 Turn***")
+        p = int(input("Please select the position for insertion : "))
+        row_index = positions[p][0]
+        col_index = positions[p][1]
+        # print(row_index, col_index, gridMatrix[row_index][col_index])
+        for i in range(3):
+            for j in range(3):
+                if i == row_index and j == col_index:
+                    gridMatrix[i][j] = player_two
+                    break
+    loop = loop + 1
